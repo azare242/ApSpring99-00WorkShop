@@ -180,15 +180,15 @@ public class Department {
 
 
         //Set Student Grade in Lab For Calculate Average
-        labs[0].setInLabStudentGrade(1,15);
-        labs[0].setInLabStudentGrade(2,13);
-        labs[0].setInLabStudentGrade(3,20);
-        labs[1].setInLabStudentGrade(1,11);
-        labs[1].setInLabStudentGrade(2,14);
-        labs[1].setInLabStudentGrade(3,20);
-        labs[2].setInLabStudentGrade(1,10);
-        labs[2].setInLabStudentGrade(2,15);
-        labs[2].setInLabStudentGrade(3,20);
+        labs[0].setInLabStudentGrade(1,lab1Students[0].getGrade());
+        labs[0].setInLabStudentGrade(2,lab1Students[1].getGrade());
+        labs[0].setInLabStudentGrade(3,lab1Students[2].getGrade());
+        labs[1].setInLabStudentGrade(1,lab2Students[0].getGrade());
+        labs[1].setInLabStudentGrade(2,lab2Students[1].getGrade());
+        labs[1].setInLabStudentGrade(3,lab2Students[2].getGrade());
+        labs[2].setInLabStudentGrade(1,lab3Students[0].getGrade());
+        labs[2].setInLabStudentGrade(2,lab3Students[1].getGrade());
+        labs[2].setInLabStudentGrade(3,lab3Students[2].getGrade());
 
 
         //Department Object

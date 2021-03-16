@@ -66,6 +66,14 @@ public class Main {
         );
     }
 
+    /**
+     * Add file Method
+     * @param in Scanner
+     * @param rock Rock Collection
+     * @param pop Pop Collection
+     * @param jazz Jazz Collection
+     * @param country Country Collection
+     */
     static void addFile(Scanner in , MusicCollection rock , MusicCollection pop , MusicCollection jazz , MusicCollection country){
         // Add file Menu codes
         boolean conditionA = true;
@@ -103,6 +111,14 @@ public class Main {
             }
         }
     }
+    /**
+     * Remove file Method
+     * @param in Scanner
+     * @param rock Rock Collection
+     * @param pop Pop Collection
+     * @param jazz Jazz Collection
+     * @param country Country Collection
+     */
     static void removeFile(Scanner in , MusicCollection rock , MusicCollection pop , MusicCollection jazz , MusicCollection country ){
         // Remove File Menu Codes
         boolean conditionR = true;
@@ -141,6 +157,14 @@ public class Main {
             }
         }
     }
+    /**
+     * Play Music Method
+     * @param in Scanner
+     * @param rock Rock Collection
+     * @param pop Pop Collection
+     * @param jazz Jazz Collection
+     * @param country Country Collection
+     */
     static void playMusic(Scanner in , MusicCollection rock , MusicCollection pop , MusicCollection jazz , MusicCollection country ){
         // Play Music Menu Codes
         boolean conditionP = true;
@@ -221,6 +245,13 @@ public class Main {
             }
         }
     }
+    /**
+     * Show Musics Method
+     * @param rock Rock Collection
+     * @param pop Pop Collection
+     * @param jazz Jazz Collection
+     * @param country Country Collection
+     */
     static void showMusics( MusicCollection rock , MusicCollection pop , MusicCollection jazz , MusicCollection country ){
         System.out.println("*********************************");
         System.out.println("Rocks: ");

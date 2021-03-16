@@ -66,6 +66,176 @@ public class Main {
         );
     }
 
+    static void addFile(Scanner in , MusicCollection rock , MusicCollection pop , MusicCollection jazz , MusicCollection country){
+        // Add file Menu codes
+        boolean conditionA = true;
+        while (conditionA){
+            showAddFileMenu();
+            int opA = in.nextInt();
+            switch (opA){
+                case 1 -> { // add rock
+                    System.out.print("Enter Name: ");
+                    String temp = in.next();
+                    rock.addFile(temp);
+                    break;
+                }
+                case 2 -> { // add pop
+                    System.out.print("Enter Name: ");
+                    String temp = in.next();
+                    pop.addFile(temp);
+                    break;
+                }
+                case 3 ->{ // add jazz
+                    System.out.print("Enter Name: ");
+                    String temp = in.next();
+                    jazz.addFile(temp);
+                    break;
+                }
+                case 4 -> { // add country
+                    System.out.print("Enter Name: ");
+                    String temp = in.next();
+                    country.addFile(temp);
+                    break;
+                }
+                case 5 -> conditionA = false;
+
+                default -> System.out.println("Invalid Input");
+            }
+        }
+    }
+    static void removeFile(Scanner in , MusicCollection rock , MusicCollection pop , MusicCollection jazz , MusicCollection country ){
+        // Remove File Menu Codes
+        boolean conditionR = true;
+        while (conditionR){
+            showRemoveFileMenu();
+            int opR = in.nextInt();
+            switch (opR){
+                case 1 -> { // Remove Rock
+                    rock.listAllFiles();
+                    System.out.print("Enter Number Of File: ");
+                    int toRemove = in.nextInt();
+                    rock.removeFile(toRemove);
+                    break;
+                }
+                case 2 -> { // Remove Pop
+                    pop.listAllFiles();
+                    System.out.print("Enter Number Of File: ");
+                    int toRemove = in.nextInt();
+                    pop.removeFile(toRemove);
+                }
+                case 3 -> { // Remove Jazz
+                    jazz.listAllFiles();
+                    System.out.print("Enter Number Of File: ");
+                    int toRemove = in.nextInt();
+                    jazz.removeFile(toRemove);
+                    break;
+                }
+                case 4 -> { // Remove Country
+                    country.listAllFiles();
+                    System.out.print("Enter Number Of File: ");
+                    int toRemove = in.nextInt();
+                    country.removeFile(toRemove);
+                }
+                case 5 -> conditionR = false;
+                default -> System.out.println("Invalid Input");
+            }
+        }
+    }
+    static void playMusic(Scanner in , MusicCollection rock , MusicCollection pop , MusicCollection jazz , MusicCollection country ){
+        // Play Music Menu Codes
+        boolean conditionP = true;
+        while (conditionP) {
+            showPlayMusicMenu();
+            int opP = in.nextInt();
+            switch (opP) {
+                case 1 -> { // Play Rock
+                    rock.listAllFiles();
+                    int toPlay = in.nextInt();
+                    rock.startPlaying(toPlay);
+                    System.out.println("When you want stop enter 0");
+                    boolean playing = true;
+                    // Playing Music While it's doesn't Stop
+                    while (playing){
+                        int stop = in.nextInt();
+                        if (stop == 0) {
+                            rock.stopPlaying();
+                            playing = false;
+                        }
+                        else System.out.println("Invalid Input");
+                    }
+                    break;
+                }
+                case 2 -> { // Play Pop
+                    pop.listAllFiles();
+                    int toPlay = in.nextInt();
+                    pop.startPlaying(toPlay);
+                    System.out.println("When you want stop enter 0");
+                    boolean playing = true;
+                    // Playing Music While it's doesn't Stop
+                    while (playing){
+                        int stop = in.nextInt();
+                        if (stop == 0) {
+                            pop.stopPlaying();
+                            playing = false;
+                        }
+                        else System.out.println("Invalid Input");
+                    }
+                    break;
+                }
+                case 3 ->{ // Play Jazz
+                    jazz.listAllFiles();
+                    int toPlay = in.nextInt();
+                    jazz.startPlaying(toPlay);
+                    System.out.println("When you want stop enter 0");
+                    boolean playing = true;
+                    // Playing Music While it's doesn't Stop
+                    while (playing){
+                        int stop = in.nextInt();
+                        if (stop == 0) {
+                            jazz.stopPlaying();
+                            playing = false;
+                        }
+                        else System.out.println("Invalid Input");
+                    }
+                    break;
+                }
+                case 4 -> { // Play Country
+                    country.listAllFiles();
+                    int toPlay = in.nextInt();
+                    country.startPlaying(toPlay);
+                    System.out.println("When you want stop enter 0");
+                    boolean playing = true;
+                    // Playing Music While it's doesn't Stop
+                    while (playing){
+                        int stop = in.nextInt();
+                        if (stop == 0) {
+                            country.stopPlaying();
+                            playing = false;
+                        }
+                        else System.out.println("Invalid Input");
+                    }
+                    break;
+                }
+                case 5 -> conditionP = false;
+                default -> System.out.println("Invalid Input");
+            }
+        }
+    }
+    static void showMusics( MusicCollection rock , MusicCollection pop , MusicCollection jazz , MusicCollection country ){
+        System.out.println("*********************************");
+        System.out.println("Rocks: ");
+        rock.listAllFiles();
+        System.out.println("------------------------");
+        System.out.println("Pops: ");
+        pop.listAllFiles();
+        System.out.println("------------------------");
+        System.out.println("Jazzes: ");
+        jazz.listAllFiles();
+        System.out.println("------------------------");
+        System.out.println("Countries: ");
+        country.listAllFiles();
+        System.out.println("*********************************");
+    }
     /**
      * Driver Program
      * @param args Program Arguments
@@ -85,174 +255,19 @@ public class Main {
             int opM = in.nextInt();
             switch (opM){
                 case 1 -> {
-                    // Add file Menu codes
-                    boolean conditionA = true;
-                    while (conditionA){
-                        showAddFileMenu();
-                        int opA = in.nextInt();
-                        switch (opA){
-                            case 1 -> { // add rock
-                                System.out.print("Enter Name: ");
-                                String temp = in.next();
-                                rock.addFile(temp);
-                                break;
-                            }
-                            case 2 -> { // add pop
-                                System.out.print("Enter Name: ");
-                                String temp = in.next();
-                                pop.addFile(temp);
-                                break;
-                            }
-                            case 3 ->{ // add jazz
-                                System.out.print("Enter Name: ");
-                                String temp = in.next();
-                                jazz.addFile(temp);
-                                break;
-                            }
-                            case 4 -> { // add country
-                                System.out.print("Enter Name: ");
-                                String temp = in.next();
-                                country.addFile(temp);
-                                break;
-                            }
-                            case 5 -> conditionA = false;
-
-                            default -> System.out.println("Invalid Input");
-                        }
-                    }
+                    addFile(in,rock,pop,jazz,country);
+                    break;
                 }
                 case 2 ->{
-                    // Remove File Menu Codes
-                    boolean conditionR = true;
-                    while (conditionR){
-                        showRemoveFileMenu();
-                        int opR = in.nextInt();
-                        switch (opR){
-                            case 1 -> { // Remove Rock
-                                rock.listAllFiles();
-                                System.out.print("Enter Number Of File: ");
-                                int toRemove = in.nextInt();
-                                rock.removeFile(toRemove);
-                                break;
-                            }
-                            case 2 -> { // Remove Pop
-                                pop.listAllFiles();
-                                System.out.print("Enter Number Of File: ");
-                                int toRemove = in.nextInt();
-                                pop.removeFile(toRemove);
-                            }
-                            case 3 -> { // Remove Jazz
-                                jazz.listAllFiles();
-                                System.out.print("Enter Number Of File: ");
-                                int toRemove = in.nextInt();
-                                jazz.removeFile(toRemove);
-                                break;
-                            }
-                            case 4 -> { // Remove Country
-                                country.listAllFiles();
-                                System.out.print("Enter Number Of File: ");
-                                int toRemove = in.nextInt();
-                                country.removeFile(toRemove);
-                            }
-                            case 5 -> conditionR = false;
-                            default -> System.out.println("Invalid Input");
-                        }
-                    }
+                    removeFile(in,rock,pop,jazz,country);
+                    break;
                 }
                 case 3 -> {
-                    // Play Music Menu Codes
-                    boolean conditionP = true;
-                    while (conditionP) {
-                        showPlayMusicMenu();
-                        int opP = in.nextInt();
-                        switch (opP) {
-                            case 1 -> { // Play Rock
-                                rock.listAllFiles();
-                                int toPlay = in.nextInt();
-                                rock.startPlaying(toPlay);
-                                System.out.println("When you want stop enter 0");
-                                boolean playing = true;
-                                // Playing Music While it's doesn't Stop
-                                while (playing){
-                                    int stop = in.nextInt();
-                                    if (stop == 0) {
-                                        rock.stopPlaying();
-                                        playing = false;
-                                    }
-                                    else System.out.println("Invalid Input");
-                                }
-                                break;
-                            }
-                            case 2 -> { // Play Pop
-                                pop.listAllFiles();
-                                int toPlay = in.nextInt();
-                                pop.startPlaying(toPlay);
-                                System.out.println("When you want stop enter 0");
-                                boolean playing = true;
-                                // Playing Music While it's doesn't Stop
-                                while (playing){
-                                    int stop = in.nextInt();
-                                    if (stop == 0) {
-                                        pop.stopPlaying();
-                                        playing = false;
-                                    }
-                                    else System.out.println("Invalid Input");
-                                }
-                                break;
-                            }
-                            case 3 ->{ // Play Jazz
-                                jazz.listAllFiles();
-                                int toPlay = in.nextInt();
-                                jazz.startPlaying(toPlay);
-                                System.out.println("When you want stop enter 0");
-                                boolean playing = true;
-                                // Playing Music While it's doesn't Stop
-                                while (playing){
-                                    int stop = in.nextInt();
-                                    if (stop == 0) {
-                                        jazz.stopPlaying();
-                                        playing = false;
-                                    }
-                                    else System.out.println("Invalid Input");
-                                }
-                                break;
-                            }
-                            case 4 -> { // Play Country
-                                country.listAllFiles();
-                                int toPlay = in.nextInt();
-                                country.startPlaying(toPlay);
-                                System.out.println("When you want stop enter 0");
-                                boolean playing = true;
-                                // Playing Music While it's doesn't Stop
-                                while (playing){
-                                    int stop = in.nextInt();
-                                    if (stop == 0) {
-                                        country.stopPlaying();
-                                        playing = false;
-                                    }
-                                    else System.out.println("Invalid Input");
-                                }
-                                break;
-                            }
-                            case 5 -> conditionP = false;
-                            default -> System.out.println("Invalid Input");
-                        }
-                    }
+                    playMusic(in,rock,pop,jazz,country);
+                    break;
                 }
                 case 4 ->{ // Show Musics Codes
-                    System.out.println("*********************************");
-                    System.out.println("Rocks: ");
-                    rock.listAllFiles();
-                    System.out.println("------------------------");
-                    System.out.println("Pops: ");
-                    pop.listAllFiles();
-                    System.out.println("------------------------");
-                    System.out.println("Jazzes: ");
-                    jazz.listAllFiles();
-                    System.out.println("------------------------");
-                    System.out.println("Countries: ");
-                    country.listAllFiles();
-                    System.out.println("*********************************");
+                    showMusics(rock,pop,jazz,country);
                     break;
 
                 }

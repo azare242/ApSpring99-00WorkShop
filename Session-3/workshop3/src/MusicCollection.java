@@ -10,7 +10,7 @@ import java.util.Iterator;
 public class MusicCollection
 {
     // An ArrayList for storing the file names of music files.
-    private ArrayList<String> files;
+    private ArrayList<Music> files;
     // A player for the music files.
     private MusicPlayer player;
 
@@ -19,17 +19,17 @@ public class MusicCollection
      */
     public MusicCollection()
     {
-        files = new ArrayList<String>();
+        files = new ArrayList<>();
         player = new MusicPlayer();
     }
 
     /**
      * Add a file to the collection.
-     * @param filename The file to be added.
+     * @param music The file to be added.
      */
-    public void addFile(String filename)
+    public void addFile(Music music)
     {
-        files.add(filename);
+        files.add(music);
     }
 
     /**
@@ -47,8 +47,10 @@ public class MusicCollection
      */
     public void listFile(int index)
     {
-        if(validIndex(index))
-            System.out.println(index + "." + files.get(index));
+        if(validIndex(index)) {
+            System.out.print(index + ". ");
+            files.get(index).printMusicDetails();
+        }
         else System.out.println("Out of Index");
     }
 
@@ -83,7 +85,7 @@ public class MusicCollection
     public void startPlaying(int index)
     {
         if (validIndex(index))
-            player.startPlaying(files.get(index));
+            player.startPlaying(files.get(index).getName());
         else System.out.println("Out Of Index");
     }
 
@@ -105,5 +107,13 @@ public class MusicCollection
     private boolean validIndex(int index)
     {
         return index < files.size();
+    }
+
+    /**
+     * get Musics method
+     * @return musics files
+     */
+    public ArrayList<Music> getFiles() {
+        return files;
     }
 }

@@ -17,7 +17,7 @@ public class Main {
      */
     static void showMainMenu(){
         System.out.println(
-                "1.Add File\n2.Remove File\n3.Play Music\n4.Show Musics\n5.Exit"
+                "1.Add File\n2.Remove File\n3.Play Music\n4.Show Musics\n5.Find Music\n6.Exit"
         );
     }
 
@@ -83,26 +83,42 @@ public class Main {
             switch (opA){
                 case 1 -> { // add rock
                     System.out.print("Enter Name: ");
-                    String temp = in.next();
-                    rock.addFile(temp);
+                    String name = in.next();
+                    System.out.print("Enter Artist Name: ");
+                    String artist = in.next();
+                    System.out.print("Enter released year: ");
+                    int year = in.nextInt();
+                    rock.addFile(new Music(name,artist,year));
                     break;
                 }
                 case 2 -> { // add pop
                     System.out.print("Enter Name: ");
-                    String temp = in.next();
-                    pop.addFile(temp);
+                    String name = in.next();
+                    System.out.print("Enter Artist Name: ");
+                    String artist = in.next();
+                    System.out.print("Enter released year: ");
+                    int year = in.nextInt();
+                    pop.addFile(new Music(name,artist,year));
                     break;
                 }
                 case 3 ->{ // add jazz
                     System.out.print("Enter Name: ");
-                    String temp = in.next();
-                    jazz.addFile(temp);
+                    String name = in.next();
+                    System.out.print("Enter Artist Name: ");
+                    String artist = in.next();
+                    System.out.print("Enter released year: ");
+                    int year = in.nextInt();
+                    jazz.addFile(new Music(name,artist,year));
                     break;
                 }
                 case 4 -> { // add country
                     System.out.print("Enter Name: ");
-                    String temp = in.next();
-                    country.addFile(temp);
+                    String name = in.next();
+                    System.out.print("Enter Artist Name: ");
+                    String artist = in.next();
+                    System.out.print("Enter released year: ");
+                    int year = in.nextInt();
+                    country.addFile(new Music(name,artist,year));
                     break;
                 }
                 case 5 -> conditionA = false;
@@ -267,6 +283,61 @@ public class Main {
         country.listAllFiles();
         System.out.println("*********************************");
     }
+
+    /**
+     * search method
+     * @param musics music collection
+     * @param name name to search
+     * @return found music
+     */
+    static Music search(MusicCollection musics,String name){
+        Iterator<Music> rockIterator = musics.getFiles().iterator();
+        while (rockIterator.hasNext()){
+            Music temp = rockIterator.next();
+            if (temp.getName().equals(name))
+                return temp;
+        }
+        return null;
+    }
+
+    /**
+     * music exist method
+     * @param musics music collection
+     * @param name name to search
+     * @return existence of music
+     */
+    static boolean musicExist(MusicCollection musics,String name){
+        Iterator<Music> rockIterator = musics.getFiles().iterator();
+        while (rockIterator.hasNext()){
+            Music temp = rockIterator.next();
+            if (temp.getName().equals(name))
+                return true;
+        }
+        return false;
+    }
+
+    /**
+     * find Music Method
+     * @param in scanner
+     * @param rock rock
+     * @param pop pop
+     * @param jazz jazz
+     * @param country country
+     */
+    static void findMusic(Scanner in , MusicCollection rock , MusicCollection pop , MusicCollection jazz , MusicCollection country ){
+        System.out.print("Enter Name Of Music: ");
+        String toSearch = in.next();
+        if (musicExist(rock,toSearch))
+            search(rock,toSearch).printMusicDetails();
+        else if (musicExist(pop,toSearch))
+            search(pop,toSearch);
+        else if (musicExist(jazz,toSearch))
+            search(jazz,toSearch).printMusicDetails();
+        else if (musicExist(country,toSearch))
+            search(country,toSearch).printMusicDetails();
+        else
+            System.out.println("Music Not Found!");
+    }
     /**
      * Driver Program
      * @param args Program Arguments
@@ -302,8 +373,12 @@ public class Main {
                     break;
 
                 }
+                case 5 -> {
+                    findMusic(in,rock,pop,jazz,country);
+                    break;
+                }
                 //Exit
-                case 5 -> conditionM = false;
+                case 6 -> conditionM = false;
                 default -> System.out.println("Invalid Input");
 
             }

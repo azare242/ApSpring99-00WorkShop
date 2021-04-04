@@ -17,7 +17,7 @@ public class Main {
      */
     static void showMainMenu(){
         System.out.println(
-                "1.Add File\n2.Remove File\n3.Play Music\n4.Show Musics\n5.Find Music\n6.Exit"
+                "1.Add File\n2.Remove File\n3.Play Music\n4.Show Musics\n5.Find Music\n6.Favourites\n7.Exit"
         );
     }
 
@@ -294,7 +294,7 @@ public class Main {
         Iterator<Music> rockIterator = musics.getFiles().iterator();
         while (rockIterator.hasNext()){
             Music temp = rockIterator.next();
-            if (temp.getName().equals(name))
+            if (temp.getName().equalsIgnoreCase(name))
                 return temp;
         }
         return null;
@@ -310,7 +310,7 @@ public class Main {
         Iterator<Music> rockIterator = musics.getFiles().iterator();
         while (rockIterator.hasNext()){
             Music temp = rockIterator.next();
-            if (temp.getName().equals(name))
+            if (temp.getName().equalsIgnoreCase(name))
                 return true;
         }
         return false;
@@ -348,6 +348,7 @@ public class Main {
         MusicCollection jazz = new MusicCollection(); // jazz Collection Object
         MusicCollection rock = new MusicCollection(); // rock Collection Object
         MusicCollection country = new MusicCollection(); // Country Collection Object
+        MusicCollection favourites = new MusicCollection(); // favourites
 
         // Main Menu Codes
         boolean conditionM = true;
@@ -377,8 +378,59 @@ public class Main {
                     findMusic(in,rock,pop,jazz,country);
                     break;
                 }
+                case 6 -> {
+                    boolean conditionF = true;
+                    while (conditionF) {
+                        favourites.listAllFiles();
+                        System.out.println("1.add\n2.remove\n3.exit");
+                        int operationF = in.nextInt();
+                        switch (operationF){
+                            case 1 -> {
+                                showAddFileMenu();
+                                int choose = in.nextInt();
+                                switch (choose){
+                                    case 1 -> {
+                                        rock.listAllFiles();
+                                        int index = in.nextInt();
+                                        favourites.addFile(rock.getFiles().get(index));
+                                    }
+                                    case 2 -> {
+                                        pop.listAllFiles();
+                                        int index = in.nextInt();
+                                        favourites.addFile(pop.getFiles().get(index));
+                                    }
+                                    case 3 -> {
+                                        jazz.listAllFiles();
+                                        int index = in.nextInt();
+                                        favourites.addFile(jazz.getFiles().get(index));
+                                    }
+                                    case 4 -> {
+                                        country.listAllFiles();
+                                        int index = in.nextInt();
+                                        favourites.addFile(country.getFiles().get(index));
+                                    }
+                                    case 5 -> {
+                                        break;
+                                    }
+                                    default -> System.out.println("Invalid input");
+                                }
+
+                            }
+                            case 2 -> {
+                                favourites.listAllFiles();
+                                int choose = in.nextInt();
+                                favourites.removeFile(choose);
+                            }
+                            case 3 ->
+                                conditionF = false;
+
+                            default -> System.out.println("invalid input");
+
+                        }
+                    }
+                }
                 //Exit
-                case 6 -> conditionM = false;
+                case 7 -> conditionM = false;
                 default -> System.out.println("Invalid Input");
 
             }

@@ -17,17 +17,7 @@ public class Triangle extends Polygon{
      * @param side3Length side 3 length
      */
     public Triangle(double side1Length,double side2Length,double side3Length){
-        super();
-        if (
-                (side1Length + side2Length >= side3Length
-                        || side3Length + side2Length >= side2Length
-                        || side1Length + side3Length >= side1Length) && (side1Length > 0 && side2Length > 0 && side3Length > 0)
-        ) {
-            sides.add(new WithInheritance.Side(side1Length));
-            sides.add(new WithInheritance.Side(side2Length));
-            sides.add(new WithInheritance.Side(side3Length));
-        }
-        else System.out.println("invalid inputs");
+        super(side1Length,side2Length,side3Length);
     }
 
     /**
@@ -59,17 +49,6 @@ public class Triangle extends Polygon{
     public ArrayList<WithInheritance.Side> getSides() {
 
         return sides;
-    }
-
-    /**
-     * To string method
-     * @return string of triangle
-     */
-    @Override
-    public String toString() {
-        return "Triangle {" +
-                "sides length = " + sides.get(0).getLength() +" , "+sides.get(1).getLength() +" , "+ sides.get(2).getLength() +
-                '}';
     }
 
     /**

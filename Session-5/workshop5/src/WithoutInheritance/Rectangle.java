@@ -107,8 +107,10 @@ public class Rectangle {
      */
     @Override
     public String toString() {
-        return "Rectangle : {" +
-                "sides length = " + sides.get(0).getLength() +" , "+sides.get(1).getLength() +" , "+ sides.get(2).getLength() +" , "+ sides.get(3).getLength() +
-                '}';
+        return "Rectangle:: " +
+                "side1: " + sides.get(0).getLength()
+                +", side2: " + sides.get(1).getLength()
+                + " side3: " + sides.get(2).getLength()
+                + ", side4: " + sides.get(3).getLength();
     }
 }

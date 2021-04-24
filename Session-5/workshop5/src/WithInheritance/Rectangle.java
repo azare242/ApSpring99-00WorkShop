@@ -20,16 +20,7 @@ public class Rectangle extends Polygon{
      * @param side4Length side 4 length
      */
     public Rectangle(double side1Length,double side2Length,double side3Length,double side4Length){
-        super();
-        if ( (side1Length == side3Length && side2Length == side4Length ) &&
-                (side1Length > 0 && side2Length > 0 && side3Length > 0 && side4Length > 0) )  {
-            sides.add(new WithInheritance.Side(side1Length));
-            sides.add(new WithInheritance.Side(side2Length));
-            sides.add(new WithInheritance.Side(side3Length));
-            sides.add(new WithInheritance.Side(side4Length));
-
-        }
-        else System.out.println("invalid inputs");
+        super(side1Length,side2Length,side3Length,side4Length);
     }
 
     /**
@@ -99,16 +90,5 @@ public class Rectangle extends Polygon{
     @Override
     public int hashCode() {
         return Objects.hash(getSides());
-    }
-
-    /**
-     * To String Method
-     * @return string of rectangle
-     */
-    @Override
-    public String toString() {
-        return "Rectangle : {" +
-                "sides length = " + sides.get(0).getLength() +" , "+sides.get(1).getLength() +" , "+ sides.get(2).getLength() +" , "+ sides.get(3).getLength() +
-                '}';
     }
 }

@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Workshop 7:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Workshop_7_jar</output-path>
+    <root id="archive" name="Workshop  7.jar">
+      <element id="module-output" name="Workshop  7" />
+    </root>
+  </artifact>
+</component>

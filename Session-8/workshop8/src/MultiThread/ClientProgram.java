@@ -1,14 +1,17 @@
-package SingleThread;
-import java.net.*;
-import java.io.*;
+package MultiThread;
+
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.net.Socket;
 import java.util.Scanner;
 /**
- * A Client Program To Exercise SocketPrograming
+ * A Client Program To Exercise SocketPrograming / MultiThreading
  * @author Alireza Zare Zeynabadi
  * @version 1.0
  * @since 2021.may.25
  */
 public class ClientProgram {
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         try{
@@ -26,7 +29,7 @@ public class ClientProgram {
                 System.out.println(din.readUTF());
             }
             dout.close();
-            socket.close();
+            din.close();
         }catch(Exception e){
             e.printStackTrace();
         }

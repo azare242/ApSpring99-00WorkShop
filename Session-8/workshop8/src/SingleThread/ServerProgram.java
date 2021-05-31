@@ -23,7 +23,8 @@ public class ServerProgram {
                     System.out.println("client exits");
                     break;
                 }
-                texts += str + ',';
+                System.out.println("client sends: " + str);
+                texts += str + '\t';
 
                 dout.writeUTF(texts);
                 dout.flush();

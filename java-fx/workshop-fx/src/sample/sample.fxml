@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="400.0" prefWidth="242.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="399.0" prefWidth="343.0" VBox.vgrow="ALWAYS">
+            <children>
+                <Label alignment="CENTER" layoutX="11.0" layoutY="277.0" style="&#10;" text="Alireza Zare Zeynabadi" textAlignment="CENTER" textFill="#9f9f9f" wrapText="false">
+                    <font>
+                        <Font name="Segoe UI Emoji" size="17.0" />
+                    </font>
+                </Label>
+                <Button layoutX="170.0" layoutY="21.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="52.0" text="AC" />
+                <Button layoutX="11.0" layoutY="223.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="38.0" text="0" />
+                <Button layoutX="11.0" layoutY="170.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="38.0" text="1" />
+                <Button layoutX="66.0" layoutY="170.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="38.0" text="2" />
+                <Button layoutX="127.0" layoutY="170.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="38.0" text="3" />
+                <Button layoutX="66.0" layoutY="223.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="38.0" text="." />
+                <Button layoutX="127.0" layoutY="223.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="38.0" text="=" />
+                <Button layoutX="11.0" layoutY="122.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="38.0" text="4" />
+                <Button layoutX="66.0" layoutY="122.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="38.0" text="5" />
+                <Button layoutX="127.0" layoutY="122.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="38.0" text="6" />
+                <Button layoutX="12.0" layoutY="72.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="37.0" text="7" />
+                <Button layoutX="66.0" layoutY="72.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="38.0" text="8" />
+                <Button layoutX="127.0" layoutY="72.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="38.0" text="9" />
+                <Button layoutX="183.0" layoutY="72.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="38.0" text="/" />
+                <Button layoutX="183.0" layoutY="122.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="38.0" text="*" />
+                <Button layoutX="183.0" layoutY="170.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="38.0" text="-" />
+                <Button layoutX="183.0" layoutY="223.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="38.0" text="+" />
+                <Hyperlink layoutX="13.0" layoutY="297.0" prefHeight="39.0" prefWidth="181.0" text="github.com/azare242" />
+                <TextField layoutX="10.0" layoutY="21.0" prefHeight="39.0" prefWidth="150.0" promptText="Calcualtor" />
+            </children>
+        </AnchorPane>
+    </children>
+</VBox>

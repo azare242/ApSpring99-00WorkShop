@@ -9,22 +9,27 @@ import javafx.stage.Stage;
 /**
  * A java Application for a simple calculator
  * @author Alireza Zare Zeynadabi
- * @version 1.0
- * @since 2021.june.12
+ * @version 2.0
+ * @since 2021.june.16
  */
 public class Main extends Application {
 
     /**
      * Start Method of application
      * @param primaryStage Stage of GUI
-     * @throws Exception exceptions
      */
     @Override
-    public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 275, 325));
-        primaryStage.show();
+    public void start(Stage primaryStage) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("sample.fxml"));
+            loader.setController(new Controller());
+            Parent root = loader.load();
+            primaryStage.setScene(new Scene(root,250,260));
+            primaryStage.setTitle("Calculator");
+            primaryStage.show();
+        } catch (Exception e){
+            System.err.println(e);
+        }
     }
 
 

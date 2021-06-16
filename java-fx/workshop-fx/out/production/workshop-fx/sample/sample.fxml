@@ -32,38 +32,85 @@
   OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<VBox prefHeight="400.0" prefWidth="242.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox prefHeight="226.0" prefWidth="250.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
     <children>
-        <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="399.0" prefWidth="343.0" VBox.vgrow="ALWAYS">
+        <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="224.0" prefWidth="250.0" VBox.vgrow="ALWAYS">
             <children>
-                <Label alignment="CENTER" layoutX="11.0" layoutY="277.0" style="&#10;" text="Alireza Zare Zeynabadi" textAlignment="CENTER" textFill="#9f9f9f" wrapText="false">
+                <Button fx:id="acButton" layoutX="183.0" layoutY="21.0" mnemonicParsing="false" onAction="#clear" prefHeight="39.0" prefWidth="38.0" text="AC">
                     <font>
-                        <Font name="Segoe UI Emoji" size="17.0" />
-                    </font>
-                </Label>
-                <Button layoutX="170.0" layoutY="21.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="52.0" text="AC" />
-                <Button layoutX="11.0" layoutY="223.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="38.0" text="0" />
-                <Button layoutX="11.0" layoutY="170.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="38.0" text="1" />
-                <Button layoutX="66.0" layoutY="170.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="38.0" text="2" />
-                <Button layoutX="127.0" layoutY="170.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="38.0" text="3" />
-                <Button layoutX="66.0" layoutY="223.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="38.0" text="." />
-                <Button layoutX="127.0" layoutY="223.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="38.0" text="=" />
-                <Button layoutX="11.0" layoutY="122.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="38.0" text="4" />
-                <Button layoutX="66.0" layoutY="122.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="38.0" text="5" />
-                <Button layoutX="127.0" layoutY="122.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="38.0" text="6" />
-                <Button layoutX="12.0" layoutY="72.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="37.0" text="7" />
-                <Button layoutX="66.0" layoutY="72.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="38.0" text="8" />
-                <Button layoutX="127.0" layoutY="72.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="38.0" text="9" />
-                <Button layoutX="183.0" layoutY="72.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="38.0" text="/" />
-                <Button layoutX="183.0" layoutY="122.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="38.0" text="*" />
-                <Button layoutX="183.0" layoutY="170.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="38.0" text="-" />
-                <Button layoutX="183.0" layoutY="223.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="38.0" text="+" />
-                <Hyperlink layoutX="13.0" layoutY="297.0" prefHeight="39.0" prefWidth="181.0" text="github.com/azare242" />
-                <TextField layoutX="10.0" layoutY="21.0" prefHeight="39.0" prefWidth="150.0" promptText="Calcualtor" />
+                        <Font name="Century" size="12.0" />
+                    </font></Button>
+                <Button fx:id="zeroButton" layoutX="11.0" layoutY="177.0" mnemonicParsing="false" onAction="#appendZero" prefHeight="39.0" prefWidth="58.0" text="0">
+                    <font>
+                        <Font name="Century" size="12.0" />
+                    </font></Button>
+                <Button fx:id="oneButton" layoutX="11.0" layoutY="138.0" mnemonicParsing="false" onAction="#appendOne" prefHeight="39.0" prefWidth="58.0" text="1">
+                    <font>
+                        <Font name="Century" size="12.0" />
+                    </font></Button>
+                <Button fx:id="twoButton" layoutX="65.0" layoutY="138.0" mnemonicParsing="false" onAction="#appendTwo" prefHeight="39.0" prefWidth="66.0" text="2">
+                    <font>
+                        <Font name="Century" size="12.0" />
+                    </font></Button>
+                <Button fx:id="threeButton" layoutX="127.0" layoutY="138.0" mnemonicParsing="false" onAction="#appendThree" prefHeight="39.0" prefWidth="58.0" text="3">
+                    <font>
+                        <Font name="Century" size="12.0" />
+                    </font></Button>
+                <Button fx:id="dotButton" layoutX="65.0" layoutY="177.0" mnemonicParsing="false" onAction="#appendDot" prefHeight="39.0" prefWidth="66.0" text=".">
+                    <font>
+                        <Font name="Century" size="12.0" />
+                    </font></Button>
+                <Button fx:id="equalButton" layoutX="127.0" layoutY="177.0" mnemonicParsing="false" onAction="#showResult" prefHeight="39.0" prefWidth="58.0" text="=">
+                    <font>
+                        <Font name="Century" size="12.0" />
+                    </font></Button>
+                <Button fx:id="fourButton" layoutX="11.0" layoutY="99.0" mnemonicParsing="false" onAction="#appendFour" prefHeight="39.0" prefWidth="58.0" text="4">
+                    <font>
+                        <Font name="Century" size="12.0" />
+                    </font></Button>
+                <Button fx:id="fiveButton" layoutX="63.0" layoutY="98.0" mnemonicParsing="false" onAction="#appendFive" prefHeight="39.0" prefWidth="66.0" text="5">
+                    <font>
+                        <Font name="Century" size="12.0" />
+                    </font></Button>
+                <Button fx:id="sixButton" layoutX="127.0" layoutY="98.0" mnemonicParsing="false" onAction="#appendSix" prefHeight="39.0" prefWidth="58.0" text="6">
+                    <font>
+                        <Font name="Century" size="12.0" />
+                    </font></Button>
+                <Button fx:id="sevenButton" layoutX="11.0" layoutY="60.0" mnemonicParsing="false" onAction="#appendSeven" prefHeight="39.0" prefWidth="58.0" text="7">
+                    <font>
+                        <Font name="Century" size="12.0" />
+                    </font></Button>
+                <Button fx:id="eightButton" layoutX="66.0" layoutY="60.0" mnemonicParsing="false" onAction="#appendEight" prefHeight="39.0" prefWidth="65.0" text="8">
+                    <font>
+                        <Font name="Century" size="12.0" />
+                    </font></Button>
+                <Button fx:id="nineButton" layoutX="127.0" layoutY="60.0" mnemonicParsing="false" onAction="#appendNine" prefHeight="39.0" prefWidth="58.0" text="9">
+                    <font>
+                        <Font name="Century" size="12.0" />
+                    </font></Button>
+                <Button fx:id="divideButton" layoutX="183.0" layoutY="60.0" mnemonicParsing="false" onAction="#divide" prefHeight="39.0" prefWidth="38.0" text="/">
+                    <font>
+                        <Font name="Century" size="12.0" />
+                    </font></Button>
+                <Button fx:id="multiplyButton" layoutX="183.0" layoutY="99.0" mnemonicParsing="false" onAction="#multiply" prefHeight="39.0" prefWidth="38.0" text="*">
+                    <font>
+                        <Font name="Century" size="12.0" />
+                    </font></Button>
+                <Button fx:id="subButton" layoutX="183.0" layoutY="138.0" mnemonicParsing="false" onAction="#sub" prefHeight="39.0" prefWidth="38.0" text="-">
+                    <font>
+                        <Font name="Century" size="12.0" />
+                    </font></Button>
+                <Button fx:id="addButton" layoutX="183.0" layoutY="177.0" mnemonicParsing="false" onAction="#add" prefHeight="39.0" prefWidth="38.0" text="+">
+                    <font>
+                        <Font name="Century" size="12.0" />
+                    </font></Button>
+                <TextField fx:id="enterArea" layoutX="11.0" layoutY="21.0" prefHeight="39.0" prefWidth="171.0" promptText="Calcualtor" />
             </children>
         </AnchorPane>
     </children>
